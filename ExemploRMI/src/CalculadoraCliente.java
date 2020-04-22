@@ -13,6 +13,9 @@ public class CalculadoraCliente {
 			reg = LocateRegistry.getRegistry(1099);
 			calc = (ICalculadora) reg.lookup("calculadora");
 			System.out.println(calc.soma(3,2));
+			System.out.println(calc.subitrair(3,2));
+			System.out.println(calc.multiplicar(3,2));
+			System.out.println(calc.dividir(3,2));
 		} catch (RemoteException | NotBoundException e) {
 				System.out.println(e);
 				System.exit(0);
