@@ -1,6 +1,7 @@
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
+//interface da Calculadora
 public interface ICalculadora extends Remote{
 
 	public int soma(int a, int b) throws RemoteException;

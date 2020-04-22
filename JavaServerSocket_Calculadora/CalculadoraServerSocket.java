@@ -16,6 +16,7 @@ public class CalculadoraServerSocket {
 		DataOutputStream socketOutput;     	
 	    DataInputStream socketInput;
 	    BufferedReader socketEntrada;
+	    
 	    Calculadora calc = new Calculadora();
 		try {
 			welcomeSocket = new ServerSocket(9090);
@@ -38,7 +39,7 @@ public class CalculadoraServerSocket {
              //Chamando a calculadora
                String result="";
                
-               
+               //avaliação da operação recebida e direcionamento para cada caso correspondente
                switch(Integer.parseInt(operacao)){
                case 1:
             	   result = ""+ calc.soma(Double.parseDouble(oper1),Double.parseDouble(oper2));

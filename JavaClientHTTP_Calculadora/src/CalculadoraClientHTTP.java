@@ -16,13 +16,17 @@ public class CalculadoraClientHTTP {
 		
 	String result="";
     try {
-
+       //cria url
        URL url = new URL("https://double-nirvana-273602.appspot.com/?hl=pt-BR");
        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+       //timeout de leitura
         conn.setReadTimeout(10000);
+      //timeout da conexão
         conn.setConnectTimeout(15000);
+      //escolha do método para envio dos dados ao servidor https
         conn.setRequestMethod("POST");
         conn.setDoInput(true);
+      //envio de solicitação
         conn.setDoOutput(true) ;
 
         //ENVIO DOS PARAMETROS
@@ -34,7 +38,9 @@ public class CalculadoraClientHTTP {
         writer.close();
         os.close();
 
+     // armazena o retorno da requisição
         int responseCode=conn.getResponseCode();
+     // verifica se a requisição foi feita com sucesso
         if (responseCode == HttpsURLConnection.HTTP_OK) {
 
             //RECBIMENTO DOS PARAMETROS
@@ -47,9 +53,12 @@ public class CalculadoraClientHTTP {
             while ((responseLine = br.readLine()) != null) {
                 response.append(responseLine.trim());
             }
+            //conversão da resposta para string
             result = response.toString();
+            //imprime a resposta do servidor
             System.out.println("Resposta do Servidor PHP="+result);
         }
+        //para caso entre em excecão
     } catch (IOException e) {
         e.printStackTrace();
     }

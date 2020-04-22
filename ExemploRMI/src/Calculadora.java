@@ -11,20 +11,24 @@ public class Calculadora  implements ICalculadora {
 	
 	private static int chamadas = 0;
 
+	//método para somar
 	public int soma(int a, int b) throws RemoteException {
-		System.out.println("MÃ©todo soma chamado " + chamadas++);
+		System.out.println("Método soma chamado " + chamadas++);
 		return a + b;
 	}
-	public int subitrair(int a, int b) throws RemoteException {
-		System.out.println("MÃ©todo subitrair chamado " + chamadas++);
+	//método parar subtrair
+	public int subtrair(int a, int b) throws RemoteException {
+		System.out.println("Método subitrair chamado " + chamadas++);
 		return a - b;
 	}
+	//método para multiplicar
 	public int multiplicar(int a, int b) throws RemoteException {
-		System.out.println("MÃ©todo multiplicar chamado " + chamadas++);
+		System.out.println("Método multiplicar chamado " + chamadas++);
 		return a * b;
 	}
+	//método para divisão
 	public int dividir(int a, int b) throws RemoteException {
-		System.out.println("MÃ©todo dividir chamado " + chamadas++);
+		System.out.println("Método dividir chamado " + chamadas++);
 		return a / b;
 	}
 

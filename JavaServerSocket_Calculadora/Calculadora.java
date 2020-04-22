@@ -1,4 +1,5 @@
 public class Calculadora {
+	//classe de implementação dos métodos da calculadora
     public String sayHello(String nome, String sobrenome) {
         return "Fala "+ nome + " " + sobrenome;
     }
